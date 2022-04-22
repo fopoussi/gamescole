@@ -7,6 +7,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
     ports:
       - 30001:30001
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "index.js"]
